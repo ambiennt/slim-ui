@@ -5,7 +5,7 @@
 		"description": "Made by \u00a73ambient\u00a7r",
 		"uuid": "526a9296-1d19-4aef-9dbe-ffd4dedcf2df",
 		"version": [ 0, 1, 0 ],
-		"min_engine_version": [ 1, 26, 30 ]
+		"min_engine_version": [ 1, 21, 0 ]
 	},
 	"modules": [
 		{
