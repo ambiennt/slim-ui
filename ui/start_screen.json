@@ -30,9 +30,9 @@
 			{
 				"sui_title@common_art.start_title_panel_content": {
 					"size": [ "100%", "20%x" ],
-					"anchor_from": "top_middle",
-					"anchor_to": "top_middle",
-					"offset": [ 0, 56 ]
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"offset": [ 0, "-20% + 4px" ]
 				}
 			},
 			{ "sui_main_buttons@start.sui_main_buttons": {} },
