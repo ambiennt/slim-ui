@@ -794,8 +794,8 @@
 					"$scroll_view_stack_panel_size|default": [ "100%", "100%" ],
 					"size": "$scroll_view_stack_panel_size",
 					"controls": [
-						{ "background_and_viewport@common.scroll_background_and_viewport": {} },
-						{ "bar_and_track@pause.sui_unclipped_scroll_bar_and_track": {} }
+						{ "sui_scroll_background_and_viewport@common.scroll_background_and_viewport": {} },
+						{ "sui_unclipped_bar_and_track@pause.sui_unclipped_scroll_bar_and_track": {} }
 					]
 				}
 			},
@@ -809,8 +809,8 @@
 					"$scroll_view_port_panel_size|default": [ "100%", "100%" ],
 					"size": "$scroll_view_port_panel_size",
 					"controls": [
-						{ "background_and_viewport@common.scroll_background_and_viewport": {} },
-						{ "bar_and_track@pause.sui_unclipped_scroll_bar_and_track": {} }
+						{ "sui_scroll_background_and_viewport@common.scroll_background_and_viewport": {} },
+						{ "sui_unclipped_bar_and_track@pause.sui_unclipped_scroll_bar_and_track": {} }
 					]
 				}
 			}
@@ -1298,9 +1298,9 @@
 		"sound_volume": 0.0,
 		"$pressed_button_name": "button.pause_focus_filler",
 		"controls": [
-			{ "default@pause.sui_filler_panel": {} },
-			{ "hover@pause.sui_focus_border": {} },
-			{ "pressed@pause.sui_focus_border": {} }
+			{ "sui_default@pause.sui_filler_panel": {} },
+			{ "sui_hover@pause.sui_focus_border": {} },
+			{ "sui_pressed@pause.sui_focus_border": {} }
 		]
 	},
 
