@@ -785,7 +785,7 @@
 	"sui_unclipped_scroll_view_control@common.scroll_view_control": {
 		"controls": [
 			{
-				"stack_panel": {
+				"sui_uncontained_scrollbar_layout": {
 					"ignored": "$scroll_bar_contained",
 					"type": "stack_panel",
 					"orientation": "horizontal",
@@ -800,7 +800,7 @@
 				}
 			},
 			{
-				"panel": {
+				"sui_contained_scrollbar_layout": {
 					"ignored": "(not $scroll_bar_contained)",
 					"type": "panel",
 					"anchor_to": "top_left",
