@@ -817,7 +817,7 @@
 		]
 	},
 
-	"sui_unclipped_scrolling_panel_base@common.scrolling_panel_base": {
+	"sui_scrolling_panel_base@common.scrolling_panel_base": {
 		"controls": [
 			{
 				"$scroll_view_name@pause.sui_unclipped_scroll_view_control": {
@@ -842,33 +842,7 @@
 		"$scrolling_content": "pause.sui_player_lists",
 		"controls": [
 			{
-				"scroll_touch@pause.sui_unclipped_scrolling_panel_base": {
-					"ignored": "(not $touch)",
-					"variables": [
-						{ "requires": "$wider_scroll_area", "$pane_size_touch": "$scrolling_pane_size_touch" },
-						{ "requires": "(not $wider_scroll_area)", "$pane_size_touch": "$scrolling_pane_size" }
-					],
-					"size": "$pane_size_touch",
-					"offset": "$scrolling_pane_offset",
-					"$scroll_bar_contained": "$scroll_bar_contained_touch",
-					"$use_touch_mode": true,
-					"$scroll_box_visible": "$scroll_box_visible_touch",
-					"$background_size": "$background_size_touch",
-					"$background_offset": "$background_offset_touch",
-					"$scroll_view_port_size": "$scroll_view_port_size_touch",
-					"$scroll_view_port_max_size": "$scroll_view_port_max_size_touch",
-					"$scroll_view_port_offset": "$scroll_view_port_offset_touch",
-					"$scroll_track_image_control": "common.empty_panel",
-					"$scroll_bar_left_padding_size": "$scroll_bar_left_padding_size_touch",
-					"$scroll_bar_right_padding_size": "$scroll_bar_right_padding_size_touch",
-					"$view_port_size": "$view_port_size_touch",
-					"$scroll_size": "$scroll_size_touch",
-					"$allow_scroll_even_when_content_fits": "$allow_scrolling_even_when_content_fits"
-				}
-			},
-			{
-				"scroll_mouse@pause.sui_unclipped_scrolling_panel_base": {
-					"ignored": "$touch",
+				"sui_scroll@pause.sui_scrolling_panel_base": {
 					"size": "$scrolling_pane_size",
 					"offset": "$scrolling_pane_offset"
 				}
@@ -974,7 +948,6 @@
 			}
 		]
 	},
-
 
 	"sui_players_label": {
 		"type": "label",
@@ -1147,11 +1120,6 @@
 					"size": [ "fill", "100%" ],
 					"layer": 1
 				}
-			},
-			{
-				"sui_platform_icon@pause.sui_platform_icon_panel": {
-					"layer": 1
-				}
 			}
 		]
 	},
@@ -1280,22 +1248,6 @@
 		]
 	},
 
-	"sui_platform_icon_panel": {
-		"type": "panel",
-		"$icon_panel_size|default": [ "100%c + 4px", "100%" ],
-		"size": "$icon_panel_size",
-		"controls": [
-			{
-				"sui_platform_icon@pause.sui_platform_icon": {
-					"layer": 1,
-					"anchor_from": "left_middle",
-					"anchor_to": "left_middle",
-					"size": [ 15, 15 ]
-				}
-			}
-		]
-	},
-
 	"sui_player_gamertag": {
 		"type": "label",
 		"color": "$main_header_text_color",
@@ -1309,20 +1261,6 @@
 				"binding_name": "#gamertag",
 				"binding_type": "collection",
 				"binding_collection_name": "players_collection"
-			}
-		]
-	},
-
-	"sui_platform_icon": {
-		"ignored": "(not $platform_icons_visible)",
-		"type": "image",
-		"texture": "textures/ui/platform_icon",
-		"bindings": [
-			{
-				"binding_name": "#is_platform_icon_visible",
-				"binding_type": "collection",
-				"binding_collection_name": "players_collection",
-				"binding_name_override": "#visible"
 			}
 		]
 	},
