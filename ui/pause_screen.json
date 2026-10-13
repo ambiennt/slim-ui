@@ -783,6 +783,9 @@
 	},
 
 	"sui_unclipped_scroll_view_control@common.scroll_view_control": {
+		// Match the custom panel name so the scroll view can hide and size the scrollbar.
+		"scroll_box_and_track_panel": "sui_unclipped_bar_and_track",
+		"scrollbar_always_visible": false,
 		"controls": [
 			{
 				"sui_uncontained_scrollbar_layout": {
