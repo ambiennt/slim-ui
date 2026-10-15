@@ -286,7 +286,7 @@
 		"size": [ "100%c", 24 ],
 		"anchor_from": "bottom_left",
 		"anchor_to": "bottom_left",
-		"offset": [ 28, -28 ],
+		"offset": [ 24, -24 ],
 		"controls": [
 			{ "sui_profile@start.sui_profile_button": {} },
 			{ "sui_signin_gap": { "type": "panel", "size": [ 2, 0 ] } },
