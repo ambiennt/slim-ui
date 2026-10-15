@@ -37,7 +37,7 @@
 			},
 			{ "sui_main_buttons@start.sui_main_buttons": {} },
 			{ "sui_skin_group@start.sui_skin_group": {} },
-			{ "sui_profile@start.sui_profile_button": {} },
+			{ "sui_account_buttons@start.sui_account_buttons": {} },
 			{ "sui_footer@start.sui_footer": {} }
 		]
 	},
@@ -280,14 +280,42 @@
 		]
 	},
 
+	"sui_account_buttons": {
+		"type": "stack_panel",
+		"orientation": "horizontal",
+		"size": [ "100%c", 24 ],
+		"anchor_from": "bottom_left",
+		"anchor_to": "bottom_left",
+		"offset": [ 28, -28 ],
+		"controls": [
+			{ "sui_profile@start.sui_profile_button": {} },
+			{ "sui_signin_gap": { "type": "panel", "size": [ 2, 0 ] } },
+			{ "sui_signin@start.sui_signin_button": {} }
+		]
+	},
+
+	"sui_signin_button@common_buttons.light_text_form_fitting_button": {
+		"size": [ "100%c", 24 ],
+		"$pressed_button_name": "button.signin",
+		"$button_state_panel": "common_buttons.new_ui_width_fitting_button_panel",
+		"$button_text_size": [ "default", 10 ],
+		"$button_text_max_size": [ 80, 10 ],
+		"$button_text": "xbox.signin",
+		"$focus_id": "sui_signin_button",
+		"anchor_from": "bottom_left",
+		"anchor_to": "bottom_left",
+		"bindings": [
+			{ "binding_name": "#sign_in_visible", "binding_name_override": "#visible" }
+		]
+	},
+
 	"sui_profile_button@common_buttons.light_content_form_fitting_button": {
 		"size": [ "100%c", "100%c" ],
 		"$button_content_size_override": [ "100%c", "100%c - 4px" ],
 		"$button_content": "start.sui_profile_content",
 		"$pressed_button_name": "button.menu_profile",
 		"anchor_from": "bottom_left",
-		"anchor_to": "bottom_left",
-		"offset": [ 28, -28 ]
+		"anchor_to": "bottom_left"
 	},
 
 	"sui_footer": {
