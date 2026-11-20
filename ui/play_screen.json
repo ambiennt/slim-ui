@@ -554,6 +554,7 @@
 		"controls": [
 			{
 				"sui_scrolling_panel@play.sui_scrolling_offsets": {
+					"$scroll_bar_left_padding_size": [ 0, 0 ],
 					"$scrolling_content": "play.sui_servers_list"
 				}
 			}
@@ -607,7 +608,7 @@
 						{
 							"sui_more_servers_grid@play.sui_more_servers_grid": {}
 						},
-						{ "sui_bottom_gap@play.sui_list_bottom_padding": {} }
+						{ "sui_bottom_gap@play.sui_list_bottom_padding": { "size": [ "100%", 3 ] } }
 					]
 				}
 			}
