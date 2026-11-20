@@ -226,6 +226,11 @@
 		"texture": "textures/ui/servers",
 		"size": [ 15, 15 ]
 	},
+	"sui_lan_icon": {
+		"type": "image",
+		"texture": "textures/ui/lan_icon",
+		"size": [ 14, 14 ]
+	},
 	"sui_world_tab@play.sui_tab": {
 		"$is_left_most_tab": true,
 		"$tab_view_binding_name": "world_navigation_tab_toggle",
@@ -520,7 +525,7 @@
 								"$network_world_grid_item_template": "play.sui_network_world_item_ignore_crossplay",
 								"$network_world_item_grid_dimension_binding": "#lan_network_world_item_grid_dimension",
 								"$collection_name": "lan_network_worlds",
-								"$hide_network_icon": true,
+								"$hide_network_icon": false,
 								"bindings": [
 									{
 										"binding_name": "#lan_network_world_item_grid_dimension"
@@ -1202,7 +1207,7 @@
 							}
 						},
 						{
-							"sui_$network_world_icon@$network_world_icon": {
+							"sui_badge@play.sui_lan_icon": {
 								"layer": 1
 							}
 						}
