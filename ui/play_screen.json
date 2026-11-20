@@ -264,9 +264,21 @@
 		"anchor_to": "bottom_middle",
 		"controls": [
 			{
-				"sui_background@common.common_panel": {
-					"$dialog_background": "dialog_background_hollow_4",
-					"$show_close_button": false
+				"sui_content_frame": {
+					"type": "image",
+					"texture": "textures/ui/dialog_background_hollow_4",
+					"layer": 1,
+					"controls": [
+						{
+							"sui_content_fill": {
+								"type": "image",
+								"texture": "textures/ui/control",
+								"size": [ "100% - 8px", "100% - 8px" ],
+								"alpha": 0.8,
+								"layer": -1
+							}
+						}
+					]
 				}
 			},
 			{
