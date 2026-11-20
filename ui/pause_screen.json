@@ -8,142 +8,8 @@
 		"size": [ 16, 16 ]
 	},
 
-	"sui_change_skin_icon": {
-		"type": "image",
-		"anchor_from": "left_middle",
-		"anchor_to": "left_middle",
-		"texture": "textures/ui/hangar",
-		"layer": 3,
-		"size": [ 32, 16 ],
-		"color": [ 0.3, 0.3, 0.3 ]
-	},
-
-	"sui_alex_icon": {
-		"type": "image",
-		"texture": "textures/ui/icon_alex",
-		"layer": 1,
-		"size": [ 16, 16 ]
-	},
-
-	"sui_profile_gamerpic": {
-		"type": "custom",
-		"renderer": "profile_image_renderer",
-		"size": [ 16, 16 ],
-		"layer": 2,
-		"bindings": [
-			{
-				"binding_name": "#profile_image_options"
-			},
-			{
-				"binding_name": "$gamerpic_visible",
-				"binding_name_override": "#visible"
-			}
-		]
-	},
-
 	"sui_column_frame": {
 		"type": "panel"
-	},
-
-	"sui_change_skin_button@common_buttons.light_glyph_button": {
-		"$pressed_button_name": "button.to_profile_or_skins_screen",
-		"size": [ 29, 26 ],
-		"$button_content": "pause.sui_change_skin_icon",
-		"$button_content_offset": [ 3, 2 ],
-		"anchor_from": "bottom_middle",
-		"anchor_to": "bottom_middle",
-		"offset": [ 0, -5 ],
-		"$focus_id": "profile_button",
-		"$pressed_alpha": 0.65
-	},
-
-	"sui_profile_button_content": {
-		"type": "stack_panel",
-		"size": [ "100%c", 24 ],
-		"orientation": "horizontal",
-		"controls": [
-			{
-				"sui_gamerpic_offset_wrapper": {
-					"type": "panel",
-					"size": [ "100%c", "100%c" ],
-					"controls": [
-						{
-							"sui_gamerpic_with_border": {
-								"type": "panel",
-								"size": [ 18, 18 ],
-								"offset": [ -2, 0 ],
-								"controls": [
-									{
-										"sui_gamerpic@pause.sui_profile_gamerpic": {
-											"$gamerpic_visible": "#is_signed_in_xbl"
-										}
-									},
-									{
-										"sui_alex_icon@pause.sui_alex_icon": {
-											"bindings": [
-												{
-													"binding_name": "(not #is_signed_in_xbl)",
-													"binding_name_override": "#visible"
-												}
-											]
-										}
-									},
-									{
-										"sui_border_black@common.focus_border_black": {
-											"layer": 3,
-											"size": [ 18, 18 ]
-										}
-									}
-								]
-							}
-						}
-					]
-				}
-			},
-			{
-				"sui_padding_middle@common.empty_panel": {
-					"size": [ 2, "100%" ]
-				}
-			},
-			{
-				"sui_vertically_central_text": {
-					"type": "stack_panel",
-					"orientation": "vertical",
-					"size": [ "100%c", "100%c" ],
-					"controls": [
-						{
-							"sui_top_padding": {
-								"type": "panel",
-								"size": [ "0px", 4 ]
-							}
-						},
-						{
-							"sui_profile_button_label@common_buttons.new_ui_binding_button_label": {
-								"layer": 1,
-								"$button_text": "menu.profile",
-								"$button_text_size": [ "default", "default" ],
-								"$button_text_max_size": [ "default", 20 ],
-								"$button_text_binding_type": "none",
-								"$button_binding_condition": "none",
-								"$button_text_grid_collection_name": ""
-							}
-						}
-					]
-				}
-			},
-			{
-				"sui_padding_right@common.empty_panel": {
-					"size": [ 6, "100%" ]
-				}
-			}
-		]
-	},
-
-	"sui_profile_button@common_buttons.light_content_form_fitting_button": {
-		"size": [ "100%c", "100%c" ],
-		"$button_content_size_override": [ "100%c", "100%c - 4px" ],
-		"$button_content": "pause.sui_profile_button_content",
-		"$pressed_button_name": "button.menu_profile"
 	},
 
 	"sui_skin_viewer_panel": {
@@ -267,7 +133,13 @@
 					"type": "panel",
 					"size": [ "100%", 24 ],
 					"controls": [
-						{ "sui_change_skin_button@pause.sui_change_skin_button": {} }
+						{
+							"sui_change_skin_button@sui_common.sui_change_skin_button": {
+								"$pressed_button_name": "button.to_profile_or_skins_screen",
+								"$focus_id": "profile_button",
+								"offset": [ 0, -5 ]
+							}
+						}
 					],
 					"bindings": [
 						{
@@ -508,7 +380,8 @@
 								"size": [ "100%c", 24 ],
 								"controls": [
 									{
-										"sui_profile_button@pause.sui_profile_button": {
+										"sui_profile_button@sui_common.sui_profile_button": {
+											"$sui_gamerpic_visible": "#is_signed_in_xbl",
 											"variables": [
 												{
 													"requires": "$profile_button_focus",
@@ -1164,9 +1037,7 @@
 		]
 	},
 
-	"sui_player_local_icon": {
-		"type": "image",
-		"texture": "textures/ui/lan_icon",
+	"sui_player_local_icon@sui_common.sui_lan_icon": {
 		"size": [ 13, 13 ],
 		"layer": 1,
 		"bindings": [

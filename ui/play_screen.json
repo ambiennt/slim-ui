@@ -226,11 +226,6 @@
 		"texture": "textures/ui/servers",
 		"size": [ 15, 15 ]
 	},
-	"sui_lan_icon": {
-		"type": "image",
-		"texture": "textures/ui/lan_icon",
-		"size": [ 14, 14 ]
-	},
 	"sui_world_tab@play.sui_tab": {
 		"$is_left_most_tab": true,
 		"$tab_view_binding_name": "world_navigation_tab_toggle",
@@ -1180,7 +1175,7 @@
 							}
 						},
 						{
-							"sui_badge@play.sui_lan_icon": {
+							"sui_badge@sui_common.sui_lan_icon": {
 								"layer": 1
 							}
 						}

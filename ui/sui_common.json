@@ -1,5 +1,171 @@
 {
 	"namespace": "sui_common",
+	"sui_lan_icon": {
+		"type": "image",
+		"texture": "textures/ui/lan_icon",
+		"size": [ 14, 14 ]
+	},
+
+	"sui_change_skin_icon": {
+		"type": "image",
+		"texture": "textures/ui/hangar",
+		"size": [ 32, 16 ],
+		"anchor_from": "left_middle",
+		"anchor_to": "left_middle",
+		"color": [ 0.3, 0.3, 0.3 ],
+		"layer": 3
+	},
+
+	"sui_change_skin_button@common_buttons.light_glyph_button": {
+		"size": [ 29, 26 ],
+		"$button_content": "sui_common.sui_change_skin_icon",
+		"$button_content_offset": [ 3, 2 ],
+		"anchor_from": "bottom_middle",
+		"anchor_to": "bottom_middle",
+		"$pressed_alpha": 0.65
+	},
+
+	"sui_profile_avatar": {
+		"type": "panel",
+		"size": [ "100%y", "100%" ],
+		"controls": [
+			{
+				"sui_gamerpic": {
+					"type": "custom",
+					"renderer": "profile_image_renderer",
+					"size": [ 16, 16 ],
+					"layer": 2,
+					"bindings": [
+						{ "binding_name": "#profile_image_options" },
+						{
+							"binding_name": "$sui_gamerpic_visible",
+							"binding_name_override": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"sui_alex_icon": {
+					"type": "image",
+					"texture": "textures/ui/icon_alex",
+					"size": [ 16, 16 ],
+					"layer": 1,
+					"bindings": [
+						{
+							"binding_name": "(not $sui_gamerpic_visible)",
+							"binding_name_override": "#visible"
+						}
+					]
+				}
+			},
+			{ "sui_border@common.focus_border_black": { "size": "$sui_avatar_size", "layer": 3 } }
+		]
+	},
+
+	"sui_profile_content": {
+		"type": "stack_panel",
+		"orientation": "horizontal",
+		"size": [ "100%c", 24 ],
+		"controls": [
+			{ "sui_avatar_space": { "type": "panel", "size": "$sui_avatar_size" } },
+			{ "sui_gap@common.empty_panel": { "size": [ 2, "100%" ] } },
+			{
+				"sui_centered_text": {
+					"type": "stack_panel",
+					"orientation": "vertical",
+					"size": [ "100%c", "100%c" ],
+					"controls": [
+						{ "sui_top_gap": { "type": "panel", "size": [ 0, 4 ] } },
+						{
+							"sui_profile_label@common_buttons.new_ui_binding_button_label": {
+								"layer": 1,
+								"$button_text": "menu.profile",
+								"$button_text_size": [ "default", "default" ],
+								"$button_text_max_size": [ "default", 20 ],
+								"$button_text_binding_type": "none",
+								"$button_binding_condition": "none",
+								"$button_text_grid_collection_name": ""
+							}
+						}
+					]
+				}
+			},
+			{ "sui_right_gap@common.empty_panel": { "size": [ 6, "100%" ] } }
+		]
+	},
+
+	"sui_profile_button@common_buttons.light_content_form_fitting_button": {
+		"size": [ "100%cm", 24 ],
+		"$sui_avatar_size": [ 18, 18 ],
+		"$button_content_size_override": [ "100%c", "100%c - 4px" ],
+		"$button_content": "sui_common.sui_profile_content",
+		"$pressed_button_name": "button.menu_profile",
+		"default_control": "sui_default",
+		"hover_control": "sui_hover",
+		"locked_control": "sui_locked",
+		"pressed_control": "sui_pressed",
+		"controls": [
+			{
+				"sui_default@$button_state_panel": {
+					"$new_ui_button_texture": "$default_button_texture",
+					"$text_color": "$default_text_color",
+					"$border_color": "$light_border_default_color"
+				}
+			},
+			{
+				"sui_hover@$button_state_panel": {
+					"$new_ui_button_texture": "$hover_button_texture",
+					"$text_color": "$light_button_hover_text_color",
+					"$border_color": "$light_border_hover_color",
+					"layer": 2
+				}
+			},
+			{
+				"sui_locked@$button_state_panel": {
+					"$new_ui_button_texture": "$locked_button_texture",
+					"$text_color": "$light_button_locked_text_color",
+					"$border_color": "$light_border_locked_color",
+					"$button_image": "common_buttons.locked_button_image"
+				}
+			},
+			{
+				"sui_avatar_layout": {
+					"type": "stack_panel",
+					"orientation": "vertical",
+					"size": [ "100%cm", 24 ],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"controls": [
+						{
+							"sui_pressed": {
+								"type": "panel",
+								"size": [ "100%c", 1 ],
+								"controls": [
+									{
+										"sui_pressed_face@$button_state_panel": {
+											"$new_ui_button_texture": "$pressed_button_texture",
+											"$text_color": "$light_button_pressed_text_color",
+											"$border_color": "$light_border_pressed_color",
+											"$button_offset": "$button_pressed_offset",
+											"layer": 3
+										}
+									}
+								]
+							}
+						},
+						{
+							"sui_avatar@sui_common.sui_profile_avatar": {
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"layer": 8
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+
 	"sui_list_row_skin": {
 		"type": "panel",
 		"$sui_thumbnail_border|default": "textures/ui/default_indent",
