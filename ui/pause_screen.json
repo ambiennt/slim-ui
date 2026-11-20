@@ -1127,23 +1127,20 @@
 		]
 	},
 
-	"sui_player_button@common_buttons.dark_content_button": {
+	"sui_player_button_inset": {
+		"type": "panel",
+		"controls": [
+			{ "sui_player_button_content@pause.sui_player_button_content": {} }
+		]
+	},
+
+	"sui_player_button@play.sui_list_row_button": {
 		"size": [ "100%", "100%" ],
 		"anchor_from": "top_left",
 		"anchor_to": "top_left",
-		"$button_content": "pause.sui_player_button_content",
-		"button_mappings": [
-			{
-				"from_button_id": "button.menu_select",
-				"to_button_id": "button.player_profile_card",
-				"mapping_type": "pressed"
-			},
-			{
-				"from_button_id": "button.menu_ok",
-				"to_button_id": "button.player_profile_card",
-				"mapping_type": "focused"
-			}
-		],
+		"$sui_row_button_size": [ "100%", 28 ],
+		"$sui_row_action": "button.player_profile_card",
+		"$sui_row_content": "pause.sui_player_button_inset",
 		"bindings": [
 			{
 				"binding_name": "#button_enabled",
