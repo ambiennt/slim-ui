@@ -693,21 +693,6 @@
 				"sui_ping_rate_panel@play.sui_ping_rate_panel": {}
 			},
 			{
-				"sui_ping_loading@progress.progress_loading_bars": {
-					"size": [ 32, "100%" ],
-					"layer": 5,
-					"color": "$dark_button_default_text_color",
-					"bindings": [
-						{
-							"binding_type": "collection",
-							"binding_name": "(not #is_network_available_and_ping_not_loading)",
-							"binding_name_override": "#visible",
-							"binding_collection_name": "third_party_server_network_worlds"
-						}
-					]
-				}
-			},
-			{
 				"sui_padding_for_ambient": {
 					"type": "panel",
 					"size": [
@@ -909,14 +894,23 @@
 						},
 						{
 							"sui_ping_rate_icon@play.sui_ping_rate_icon": {}
-						}
-					],
-					"bindings": [
+						},
 						{
-							"binding_type": "collection",
-							"binding_name": "(#is_network_available_and_ping_not_loading)",
-							"binding_name_override": "#visible",
-							"binding_collection_name": "third_party_server_network_worlds"
+							"sui_ping_loading@progress.progress_loading_bars": {
+								"size": [ 32, 4 ],
+								"offset": [ 0, 0 ],
+								"layer": 5,
+								"color": "$dark_button_default_text_color",
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "sui_ping_rate_icon",
+										"resolve_sibling_scope": true,
+										"source_property_name": "(#texture = '')",
+										"target_property_name": "#visible"
+									}
+								]
+							}
 						}
 					]
 				}
@@ -1010,6 +1004,11 @@
 				"binding_name_override": "#texture",
 				"binding_type": "collection",
 				"binding_collection_name": "$collection_name"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(not (#texture = ''))",
+				"target_property_name": "#visible"
 			}
 		]
 	},
