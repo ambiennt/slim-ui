@@ -1049,21 +1049,12 @@
 		]
 	},
 
-	"sui_player_permission_button@common_buttons.dark_content_button": {
+	"sui_player_permission_button@sui_common.sui_list_row_button": {
 		"size": [ 28, "100%" ],
-		"$button_content": "pause.sui_player_permission_button_content",
-		"button_mappings": [
-			{
-				"from_button_id": "button.menu_select",
-				"to_button_id": "button.menu_permission",
-				"mapping_type": "pressed"
-			},
-			{
-				"from_button_id": "button.menu_ok",
-				"to_button_id": "button.menu_permission",
-				"mapping_type": "focused"
-			}
-		],
+		"$sui_row_button_size": [ "100%", 28 ],
+		"$sui_content_size": [ 15, 15 ],
+		"$sui_row_action": "button.menu_permission",
+		"$sui_row_content": "pause.sui_player_permission_icon",
 		"bindings": [
 			{
 				"binding_type": "collection_details",
@@ -1072,24 +1063,15 @@
 		]
 	},
 
-	"sui_player_permission_button_content": {
-		"type": "panel",
-		"size": [ 15, 15 ],
-		"controls": [
+	"sui_player_permission_icon": {
+		"type": "image",
+		"texture": "#player_permission_level_icon_texture",
+		"bindings": [
 			{
-				"sui_permission_icon_image": {
-					"type": "image",
-					"texture": "#player_permission_level_icon_texture",
-					"size": [ 15, 15 ],
-					"bindings": [
-						{
-							"binding_name": "#player_permission_level_icon_texture",
-							"binding_name_override": "#texture",
-							"binding_type": "collection",
-							"binding_collection_name": "players_collection"
-						}
-					]
-				}
+				"binding_name": "#player_permission_level_icon_texture",
+				"binding_name_override": "#texture",
+				"binding_type": "collection",
+				"binding_collection_name": "players_collection"
 			}
 		]
 	},
@@ -1134,7 +1116,7 @@
 		]
 	},
 
-	"sui_player_button@play.sui_list_row_button": {
+	"sui_player_button@sui_common.sui_list_row_button": {
 		"size": [ "100%", "100%" ],
 		"anchor_from": "top_left",
 		"anchor_to": "top_left",

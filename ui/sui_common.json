@@ -1,0 +1,140 @@
+{
+	"namespace": "sui_common",
+	"sui_list_row_skin": {
+		"type": "panel",
+		"$sui_thumbnail_border|default": "textures/ui/default_indent",
+		"$sui_thumbnail_offset|default": [ 0, 0 ],
+		"controls": [
+			{
+				"sui_surface": {
+					"type": "image",
+					"texture": "$sui_surface_texture",
+					"size": [ "100% - 2px", "100% - 2px" ],
+					"layer": 1
+				}
+			},
+			{
+				"sui_outline": {
+					"type": "image",
+					"texture": "textures/ui/focus_border_white",
+					"color": "$sui_outline_color",
+					"layer": 2
+				}
+			},
+			{
+				"sui_thumbnail_inset": {
+					"ignored": "(not $sui_has_world_thumbnail)",
+					"type": "panel",
+					"size": "$sui_content_size",
+					"offset": "$sui_thumbnail_offset",
+					"controls": [
+						{
+							"sui_thumbnail_bounds": {
+								"type": "panel",
+								"size": "$sui_picture_size",
+								"anchor_from": "left_middle",
+								"anchor_to": "left_middle",
+								"offset": [ 1, 0 ],
+								"controls": [
+									{
+										"sui_thumbnail_border": {
+											"type": "image",
+											"texture": "$sui_thumbnail_border",
+											"size": [ "100% + 2px", "100% + 2px" ],
+											"layer": 3
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"sui_list_row_button": {
+		"type": "button",
+		"$sui_row_button_size|default": [ "100%", 31 ],
+		"size": "$sui_row_button_size",
+		"layer": 1,
+		"focus_enabled": true,
+		"focus_magnet_enabled": true,
+		"focus_wrap_enabled": true,
+		"sound_name": "random.click",
+		"sound_volume": 1,
+		"sound_pitch": 1,
+		"default_control": "sui_default",
+		"hover_control": "sui_hover",
+		"pressed_control": "sui_pressed",
+		"locked_control": "sui_locked",
+		"$sui_content_size|default": [ "100% - 6px", "100% - 6px" ],
+		"$sui_has_world_thumbnail|default": false,
+		"button_mappings": [
+			{ "from_button_id": "button.menu_select", "to_button_id": "$sui_row_action", "mapping_type": "pressed" },
+			{ "from_button_id": "button.menu_ok", "to_button_id": "$sui_row_action", "mapping_type": "focused" }
+		],
+		"controls": [
+			{
+				"sui_default@sui_common.sui_list_row_skin": {
+					"$sui_surface_texture": "textures/ui/button_borderless_dark",
+					"$sui_outline_color": "$dark_border_default_color",
+					"layer": 1
+				}
+			},
+			{
+				"sui_hover@sui_common.sui_list_row_skin": {
+					"$sui_surface_texture": "textures/ui/button_borderless_darkhover",
+					"$sui_outline_color": "$dark_border_hover_color",
+					"$sui_thumbnail_border": "textures/ui/world_screenshot_focus_border",
+					"layer": 2
+				}
+			},
+			{
+				"sui_locked@sui_common.sui_list_row_skin": {
+					"$sui_surface_texture": "textures/ui/disabledButtonNoBorder",
+					"$sui_outline_color": "$dark_border_locked_color",
+					"layer": 1
+				}
+			},
+			{
+				"sui_content_layout": {
+					"type": "stack_panel",
+					"orientation": "vertical",
+					"size": [ "100%", "100%" ],
+					"controls": [
+						{
+							"sui_pressed": {
+								"type": "panel",
+								"size": [ "100%", 1 ],
+								"controls": [
+									{
+										"sui_pressed_skin@sui_common.sui_list_row_skin": {
+											"anchor_from": "top_left",
+											"anchor_to": "top_left",
+											"size": "$sui_row_button_size",
+											"$sui_surface_texture": "textures/ui/button_borderless_darkpressed",
+											"$sui_outline_color": "$dark_border_pressed_color",
+											"$sui_thumbnail_border": "textures/ui/world_screenshot_focus_border",
+											"$sui_thumbnail_offset": [ 0, 1 ],
+											"layer": 3
+										}
+									}
+								]
+							}
+						},
+						{
+							"sui_content_slot": {
+								"type": "panel",
+								"size": [ "100%", "100%" ],
+								"layer": 8,
+								"controls": [
+									{ "sui_content@$sui_row_content": { "size": "$sui_content_size" } }
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}
