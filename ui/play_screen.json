@@ -1378,16 +1378,6 @@
 										}
 									},
 									{
-										"sui_local_world_connected_storage@play.sui_local_world_connected_storage": {
-											"size": [
-												16,
-												8
-											],
-											"visible": false,
-											"layer": 1
-										}
-									},
-									{
 										"sui_local_world_filesize@play.sui_local_world_filesize": {
 											"size": [
 												"default",
@@ -1627,47 +1617,6 @@
 			}
 		]
 	},
-	"sui_local_world_connected_storage": {
-		"type": "panel",
-		"controls": [
-			{
-				"sui_local_and_cloud@play.sui_local_and_cloud_storage": {
-					"bindings": [
-						{
-							"binding_name": "#local_and_cloud_storage_visible",
-							"binding_name_override": "#visible",
-							"binding_type": "collection",
-							"binding_collection_name": "local_worlds"
-						}
-					]
-				}
-			},
-			{
-				"sui_local_only@play.sui_local_only_storage": {
-					"bindings": [
-						{
-							"binding_name": "#local_only_storage_visible",
-							"binding_name_override": "#visible",
-							"binding_type": "collection",
-							"binding_collection_name": "local_worlds"
-						}
-					]
-				}
-			},
-			{
-				"sui_cloud_only@play.sui_cloud_only_storage": {
-					"bindings": [
-						{
-							"binding_name": "#cloud_only_storage_visible",
-							"binding_name_override": "#visible",
-							"binding_type": "collection",
-							"binding_collection_name": "local_worlds"
-						}
-					]
-				}
-			}
-		]
-	},
 	"sui_local_world_filesize@play.sui_world_list_text": {
 		"text": "#local_worldfile_size",
 		"color": "$secondary_text_color",
@@ -1783,15 +1732,6 @@
 			8
 		],
 		"texture": "textures/ui/lock"
-	},
-	"sui_local_and_cloud_storage@play.sui_connected_storage": {
-		"texture": "textures/ui/local_and_cloud_storage"
-	},
-	"sui_local_only_storage@play.sui_connected_storage": {
-		"texture": "textures/ui/local_only_storage"
-	},
-	"sui_cloud_only_storage@play.sui_connected_storage": {
-		"texture": "textures/ui/cloud_only_storage"
 	},
 	"sui_network_world_player_count": {
 		"type": "panel",
@@ -1927,14 +1867,6 @@
 		"$show_background": false,
 		"anchor_from": "top_right",
 		"anchor_to": "top_right"
-	},
-	"sui_connected_storage": {
-		"type": "image",
-		"texture": "textures/ui/local_and_cloud_storage",
-		"size": [
-			12,
-			8
-		]
 	},
 	"sui_world_item_grid_base": {
 		"type": "grid",
