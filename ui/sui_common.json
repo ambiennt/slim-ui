@@ -1,5 +1,11 @@
 {
 	"namespace": "sui_common",
+	"sui_title_image": {
+		"type": "image",
+		"layer": 1,
+		"texture": "textures/ui/title"
+	},
+
 	"sui_lan_icon": {
 		"type": "image",
 		"texture": "textures/ui/lan_icon",

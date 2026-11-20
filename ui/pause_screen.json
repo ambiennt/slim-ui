@@ -467,7 +467,7 @@
 					"anchor_to": "top_middle",
 					"controls": [
 						{
-							"sui_minecraft_logo@common_art.title_image": {
+							"sui_minecraft_logo@sui_common.sui_title_image": {
 								"size": [ "180%", "20%x" ],
 								"anchor_from": "center",
 								"anchor_to": "center",
