@@ -224,36 +224,22 @@
 		]
 	},
 
+	"sui_profile_avatar": {
+		"type": "panel",
+		"size": [ "100%y", "100%" ],
+		"controls": [
+			{ "sui_gamerpic@start.sui_gamerpic": {} },
+			{ "sui_alex@start.sui_alex_icon": {} },
+			{ "sui_border@common.focus_border_black": { "size": "$sui_avatar_size", "layer": 3 } }
+		]
+	},
+
 	"sui_profile_content": {
 		"type": "stack_panel",
 		"orientation": "horizontal",
 		"size": [ "100%c", 24 ],
 		"controls": [
-			{
-				"sui_gamerpic_wrapper": {
-					"type": "panel",
-					"size": [ "100%c", "100%c" ],
-					"controls": [
-						{
-							"sui_gamerpic_frame": {
-								"type": "panel",
-								"size": [ 18, 18 ],
-								"offset": [ -2, 0 ],
-								"controls": [
-									{ "sui_gamerpic@start.sui_gamerpic": {} },
-									{ "sui_alex@start.sui_alex_icon": {} },
-									{
-										"sui_border@common.focus_border_black": {
-											"size": [ 18, 18 ],
-											"layer": 3
-										}
-									}
-								]
-							}
-						}
-					]
-				}
-			},
+			{ "sui_avatar_space": { "type": "panel", "size": "$sui_avatar_size" } },
 			{ "sui_gap@common.empty_panel": { "size": [ 2, "100%" ] } },
 			{
 				"sui_centered_text": {
@@ -310,12 +296,77 @@
 	},
 
 	"sui_profile_button@common_buttons.light_content_form_fitting_button": {
-		"size": [ "100%c", "100%c" ],
+		"size": [ "100%cm", 24 ],
+		"$sui_avatar_size": [ 18, 18 ],
 		"$button_content_size_override": [ "100%c", "100%c - 4px" ],
 		"$button_content": "start.sui_profile_content",
 		"$pressed_button_name": "button.menu_profile",
 		"anchor_from": "bottom_left",
-		"anchor_to": "bottom_left"
+		"anchor_to": "bottom_left",
+		"default_control": "sui_default",
+		"hover_control": "sui_hover",
+		"locked_control": "sui_locked",
+		"pressed_control": "sui_pressed",
+		"controls": [
+			{
+				"sui_default@$button_state_panel": {
+					"$new_ui_button_texture": "$default_button_texture",
+					"$text_color": "$default_text_color",
+					"$border_color": "$light_border_default_color"
+				}
+			},
+			{
+				"sui_hover@$button_state_panel": {
+					"$new_ui_button_texture": "$hover_button_texture",
+					"$text_color": "$light_button_hover_text_color",
+					"$border_color": "$light_border_hover_color",
+					"layer": 2
+				}
+			},
+			{
+				"sui_locked@$button_state_panel": {
+					"$new_ui_button_texture": "$locked_button_texture",
+					"$text_color": "$light_button_locked_text_color",
+					"$border_color": "$light_border_locked_color",
+					"$button_image": "common_buttons.locked_button_image"
+				}
+			},
+			{
+				"sui_avatar_layout": {
+					"type": "stack_panel",
+					"orientation": "vertical",
+					"size": [ "100%cm", 24 ],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"controls": [
+						{
+							"sui_pressed": {
+								"type": "panel",
+								"size": [ "100%c", 1 ],
+								"controls": [
+									{
+										"sui_pressed_face@$button_state_panel": {
+											"$new_ui_button_texture": "$pressed_button_texture",
+											"$text_color": "$light_button_pressed_text_color",
+											"$border_color": "$light_border_pressed_color",
+											"$button_offset": "$button_pressed_offset",
+											"layer": 3
+										}
+									}
+								]
+							}
+						},
+						{
+							"sui_avatar@start.sui_profile_avatar": {
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"layer": 8
+							}
+						}
+					]
+				}
+			}
+		]
 	},
 
 	"sui_footer": {
