@@ -397,7 +397,8 @@
 						},
 						{
 							"sui_worlds_grid@play.sui_local_world_item_grid": {}
-						}
+						},
+						{ "sui_bottom_gap@play.sui_list_bottom_padding": {} }
 					]
 				}
 			}
@@ -530,7 +531,8 @@
 									}
 								]
 							}
-						}
+						},
+						{ "sui_bottom_gap@play.sui_list_bottom_padding": {} }
 					]
 				}
 			}
@@ -592,7 +594,8 @@
 						},
 						{
 							"sui_more_servers_grid@play.sui_more_servers_grid": {}
-						}
+						},
+						{ "sui_bottom_gap@play.sui_list_bottom_padding": {} }
 					]
 				}
 			}
@@ -1892,6 +1895,10 @@
 		"focus_navigation_mode_up": "contained",
 		"focus_navigation_mode_right": "contained",
 		"focus_navigation_mode_left": "contained"
+	},
+	"sui_list_bottom_padding": {
+		"type": "panel",
+		"size": [ "100%", 4 ]
 	},
 	"sui_common_scroll_pane": {
 		"type": "panel",
