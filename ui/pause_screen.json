@@ -1,13 +1,6 @@
 {
 	"namespace": "pause",
 
-	"sui_achievements_icon": {
-		"type": "image",
-		"texture": "textures/ui/achievements",
-		"layer": 3,
-		"size": [ 16, 16 ]
-	},
-
 	"sui_column_frame": {
 		"type": "panel"
 	},
@@ -459,13 +452,6 @@
 		"alpha": 0.8
 	},
 
-	"sui_non_transparent_background": {
-		"type": "image",
-		"texture": "textures/ui/menubackground",
-		"layer": 1,
-		"alpha": 1
-	},
-
 	"sui_menu_the_rest_panel": {
 		"type": "panel",
 		"size": [ "28%", "100%" ],
@@ -568,15 +554,6 @@
 				}
 			},
 			{ "sui_info_panel_list@pause.sui_info_panel_content_list": {} }
-		]
-	},
-
-	"sui_player_panel_background@pause.sui_transparent_background": {
-		"anchor_from": "center",
-		"anchor_to": "center",
-		"size": [ "100% - 2px", "100% - 2px" ],
-		"controls": [
-			{ "sui_player_list_scrolling_panel@pause.sui_player_list_scrolling_panel": {} }
 		]
 	},
 
@@ -810,21 +787,6 @@
 		]
 	},
 
-	"sui_ip_label": {
-		"type": "label",
-		"text": "#ip",
-		"size": [ "100%", 10 ],
-		"color": "$main_header_text_color",
-		"layer": 1,
-		"bindings": [
-			{
-				"binding_name": "#ip_address_text",
-				"binding_name_override": "#ip",
-				"binding_condition": "visibility_changed"
-			}
-		]
-	},
-
 	"sui_players_label": {
 		"type": "label",
 		"text": "#players_list_title",
@@ -952,11 +914,6 @@
 	"sui_vertical_padding": {
 		"type": "panel",
 		"size": [ 0, 2 ]
-	},
-
-	"sui_horizontal_padding": {
-		"type": "panel",
-		"size": [ 2, 0 ]
 	},
 
 	"sui_player_button_content": {
