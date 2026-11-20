@@ -1297,6 +1297,9 @@
 		"size": [ "100%", "100%" ],
 		"sound_volume": 0.0,
 		"$pressed_button_name": "button.pause_focus_filler",
+		"default_control": "sui_default",
+		"hover_control": "sui_hover",
+		"pressed_control": "sui_pressed",
 		"controls": [
 			{ "sui_default@pause.sui_filler_panel": {} },
 			{ "sui_hover@pause.sui_focus_border": {} },
