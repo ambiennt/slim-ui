@@ -15,15 +15,9 @@
 		],
 		"$screen_content": "start.sui_start_content",
 		"button_mappings": [
-			{
-				"ignored": "(not $can_quit)",
-				"from_button_id": "button.menu_cancel",
-				"to_button_id": "button.menu_exit",
-				"mapping_type": "global"
-			}
+			{ "ignored": "(not $can_quit)", "from_button_id": "button.menu_cancel", "to_button_id": "button.menu_exit", "mapping_type": "global" }
 		]
 	},
-
 	"sui_start_content": {
 		"type": "panel",
 		"size": [ "100%", "100%" ],
@@ -46,28 +40,23 @@
 	"sui_button_template@common_buttons.light_text_button": {
 		"size": [ "100% - 2px", "100% - 2px" ]
 	},
-
 	"sui_button_row": {
 		"type": "panel",
 		"size": [ "100%", 32 ]
 	},
-
 	"sui_play_button@start.sui_button_template": {
 		"$pressed_button_name": "$play_button_target",
 		"$button_text": "menu.play",
 		"default_focus_precedence": 1
 	},
-
 	"sui_achievements_button@start.sui_button_template": {
 		"$pressed_button_name": "button.menu_achievements",
 		"$button_text": "menu.achievements"
 	},
-
 	"sui_settings_button@start.sui_button_template": {
 		"$pressed_button_name": "button.menu_settings",
 		"$button_text": "menu.settings"
 	},
-
 	"sui_main_buttons": {
 		"type": "panel",
 		"size": [ 150, 96 ],
@@ -83,17 +72,23 @@
 					"controls": [
 						{
 							"sui_play_row@start.sui_button_row": {
-								"controls": [ { "sui_play@start.sui_play_button": {} } ]
+								"controls": [
+									{ "sui_play@start.sui_play_button": {} }
+								]
 							}
 						},
 						{
 							"sui_achievements_row@start.sui_button_row": {
-								"controls": [ { "sui_achievements@start.sui_achievements_button": {} } ]
+								"controls": [
+									{ "sui_achievements@start.sui_achievements_button": {} }
+								]
 							}
 						},
 						{
 							"sui_settings_row@start.sui_button_row": {
-								"controls": [ { "sui_settings@start.sui_settings_button": {} } ]
+								"controls": [
+									{ "sui_settings@start.sui_settings_button": {} }
+								]
 							}
 						}
 					]
@@ -119,18 +114,12 @@
 			{ "sui_hanger@sui_common.sui_change_skin_button": { "$pressed_button_name": "button.to_profile_screen" } }
 		]
 	},
-
 	"sui_skin_viewer": {
 		"type": "input_panel",
 		"size": [ 100, 100 ],
 		"gesture_tracking_button": "button.turn_doll",
 		"button_mappings": [
-			{
-				"from_button_id": "button.menu_select",
-				"to_button_id": "button.turn_doll",
-				"mapping_type": "pressed",
-				"button_up_right_of_first_refusal": true
-			}
+			{ "from_button_id": "button.menu_select", "to_button_id": "button.turn_doll", "mapping_type": "pressed", "button_up_right_of_first_refusal": true }
 		],
 		"controls": [
 			{
@@ -144,23 +133,9 @@
 					"offset": [ 0, -18 ],
 					"layer": 2,
 					"bindings": [
-						{
-							"binding_type": "view",
-							"source_control_name": "sui_viewer_panel",
-							"source_property_name": "#gesture_delta_source",
-							"target_property_name": "#gesture_delta_source"
-						},
-						{
-							"binding_type": "view",
-							"source_control_name": "sui_viewer_panel",
-							"source_property_name": "#gesture_mouse_delta_x",
-							"target_property_name": "#gesture_mouse_delta_x"
-						},
-						{
-							"binding_name": "#is_appearance_visible",
-							"binding_name_override": "#visible",
-							"binding_condition": "always"
-						}
+						{ "binding_type": "view", "source_control_name": "sui_viewer_panel", "source_property_name": "#gesture_delta_source", "target_property_name": "#gesture_delta_source" },
+						{ "binding_type": "view", "source_control_name": "sui_viewer_panel", "source_property_name": "#gesture_mouse_delta_x", "target_property_name": "#gesture_mouse_delta_x" },
+						{ "binding_name": "#is_appearance_visible", "binding_name_override": "#visible", "binding_condition": "always" }
 					]
 				}
 			},
@@ -172,7 +147,9 @@
 					"anchor_from": "top_middle",
 					"anchor_to": "bottom_middle",
 					"layer": 2,
-					"bindings": [ { "binding_name": "#playername" } ]
+					"bindings": [
+						{ "binding_name": "#playername" }
+					]
 				}
 			}
 		]
@@ -197,7 +174,6 @@
 			{ "sui_signin@start.sui_signin_button": {} }
 		]
 	},
-
 	"sui_signin_button@common_buttons.light_text_form_fitting_button": {
 		"size": [ "100%c", 24 ],
 		"$pressed_button_name": "button.signin",
@@ -224,7 +200,6 @@
 			{ "sui_version@start.sui_version": {} }
 		]
 	},
-
 	"sui_copyright": {
 		"type": "panel",
 		"controls": [
@@ -254,7 +229,6 @@
 			}
 		]
 	},
-
 	"sui_version": {
 		"type": "panel",
 		"size": [ "50%", "100%" ],
@@ -271,7 +245,9 @@
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"layer": 2,
-					"bindings": [ { "binding_name": "#version" } ]
+					"bindings": [
+						{ "binding_name": "#version" }
+					]
 				}
 			},
 			{

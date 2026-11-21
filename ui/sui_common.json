@@ -1,11 +1,11 @@
 {
 	"namespace": "sui_common",
+
 	"sui_title_image": {
 		"type": "image",
 		"layer": 1,
 		"texture": "textures/ui/title"
 	},
-
 	"sui_lan_icon": {
 		"type": "image",
 		"texture": "textures/ui/lan_icon",
@@ -21,7 +21,6 @@
 		"color": [ 0.3, 0.3, 0.3 ],
 		"layer": 3
 	},
-
 	"sui_change_skin_button@common_buttons.light_glyph_button": {
 		"size": [ 29, 26 ],
 		"$button_content": "sui_common.sui_change_skin_icon",
@@ -43,10 +42,7 @@
 					"layer": 2,
 					"bindings": [
 						{ "binding_name": "#profile_image_options" },
-						{
-							"binding_name": "$sui_gamerpic_visible",
-							"binding_name_override": "#visible"
-						}
+						{ "binding_name": "$sui_gamerpic_visible", "binding_name_override": "#visible" }
 					]
 				}
 			},
@@ -57,17 +53,13 @@
 					"size": [ 16, 16 ],
 					"layer": 1,
 					"bindings": [
-						{
-							"binding_name": "(not $sui_gamerpic_visible)",
-							"binding_name_override": "#visible"
-						}
+						{ "binding_name": "(not $sui_gamerpic_visible)", "binding_name_override": "#visible" }
 					]
 				}
 			},
 			{ "sui_border@common.focus_border_black": { "size": "$sui_avatar_size", "layer": 3 } }
 		]
 	},
-
 	"sui_profile_content": {
 		"type": "stack_panel",
 		"orientation": "horizontal",
@@ -99,7 +91,6 @@
 			{ "sui_right_gap@common.empty_panel": { "size": [ 6, "100%" ] } }
 		]
 	},
-
 	"sui_profile_button@common_buttons.light_content_form_fitting_button": {
 		"size": [ "100%cm", 24 ],
 		"$sui_avatar_size": [ 18, 18 ],
@@ -177,22 +168,8 @@
 		"$sui_thumbnail_border|default": "textures/ui/default_indent",
 		"$sui_thumbnail_offset|default": [ 0, 0 ],
 		"controls": [
-			{
-				"sui_surface": {
-					"type": "image",
-					"texture": "$sui_surface_texture",
-					"size": [ "100% - 2px", "100% - 2px" ],
-					"layer": 1
-				}
-			},
-			{
-				"sui_outline": {
-					"type": "image",
-					"texture": "textures/ui/focus_border_white",
-					"color": "$sui_outline_color",
-					"layer": 2
-				}
-			},
+			{ "sui_surface": { "type": "image", "texture": "$sui_surface_texture", "size": [ "100% - 2px", "100% - 2px" ], "layer": 1 } },
+			{ "sui_outline": { "type": "image", "texture": "textures/ui/focus_border_white", "color": "$sui_outline_color", "layer": 2 } },
 			{
 				"sui_thumbnail_inset": {
 					"ignored": "(not $sui_has_world_thumbnail)",
@@ -208,14 +185,7 @@
 								"anchor_to": "left_middle",
 								"offset": [ 1, 0 ],
 								"controls": [
-									{
-										"sui_thumbnail_border": {
-											"type": "image",
-											"texture": "$sui_thumbnail_border",
-											"size": [ "100% + 2px", "100% + 2px" ],
-											"layer": 3
-										}
-									}
+									{ "sui_thumbnail_border": { "type": "image", "texture": "$sui_thumbnail_border", "size": [ "100% + 2px", "100% + 2px" ], "layer": 3 } }
 								]
 							}
 						}
