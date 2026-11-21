@@ -4,6 +4,7 @@
 	"play_screen@common.base_screen": {
 		"cache_screen": true,
 		"close_on_player_hurt": false,
+		"send_telemetry": false,
 
 		"variables": [],
 
