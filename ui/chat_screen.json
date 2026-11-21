@@ -40,17 +40,33 @@
 		"size": [ "100% - 2px", "100% - 50px" ],
 		"offset": [ 2, -27 ],
 		"$scrolling_content": "chat.sui_message_list",
-		"$scroll_view_name": "messages_scroll_view",
-		"$force_scroll_to_end_binding_name": "#scroll_chat_to_bottom",
-		"$force_scroll_to_end_binding_type": "global",
 		"$scroll_size": [ 5, "100% - 4px" ],
 		"$jump_to_bottom_on_update": true,
 		"$show_background": false,
-		"$always_handle_scrolling": true
+		"$always_handle_scrolling": true,
+		"controls": [
+			{
+				"sui_history_input@common.scrolling_panel_base": {
+					"controls": [
+						{ "messages_scroll_view@chat.sui_message_scroll_view": {} }
+					]
+				}
+			}
+		]
+	},
+	"sui_message_scroll_view@common.scroll_view_control": {
+		"allow_scroll_even_when_content_fits": "$allow_scroll_even_when_content_fits",
+		"bindings": [
+			{ "binding_name": "#chat_visible", "binding_name_override": "#force_scroll_to_end", "binding_condition": "once" },
+			{ "binding_name": "#scroll_chat_to_bottom", "binding_name_override": "#force_scroll_to_end", "binding_condition": "always_when_visible" },
+			{ "binding_type": "view", "source_property_name": "#scrolled_to_end", "target_property_name": "#chat_scrolled_to_end" },
+			{ "binding_name": "#scroll_status_update", "binding_condition": "always" }
+		]
 	},
 	"sui_message_list": {
 		"type": "stack_panel",
 		"orientation": "vertical",
+		"size": [ "100%", "100%c" ],
 		"$scrolling_content_anchor_from": "bottom_left",
 		"$scrolling_content_anchor_to": "bottom_left",
 		"factory": {
@@ -133,8 +149,6 @@
 			}
 		],
 		"bindings": [
-			{ "binding_type": "view", "source_control_name": "messages_scroll_view", "source_property_name": "#scrolled_to_end", "target_property_name": "#chat_scrolled_to_end" },
-			{ "binding_name": "#scroll_status_update", "binding_condition": "always" },
 			{ "binding_name": "#has_new_messages", "binding_name_override": "#visible", "binding_condition": "always" }
 		]
 	},
