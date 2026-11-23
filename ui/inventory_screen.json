@@ -105,8 +105,8 @@
 			},
 			{ "inventory_take_progress_icon_button@crafting.sui_take_progress_cursor": {} },
 			{ "inventory_selected_icon_button@crafting.sui_held_item_cursor": {} },
-			{ "selected_item_details_factory@common.selected_item_details_factory": {} },
-			{ "item_lock_notification_factory@common.item_lock_notification_factory": {} },
+			{ "sui_selected_item_details_factory@sui_common.sui_selected_item_details_factory": {} },
+			{ "sui_item_lock_notification_factory@sui_common.sui_item_lock_notification_factory": {} },
 			{ "flying_item_renderer@common.flying_item_renderer": { "layer": 15 } }
 		]
 	},
@@ -628,12 +628,13 @@
 	},
 
 	"sui_inventory_container_slot_button@common.container_slot_button_prototype": {
+		"$slot_cancel_button_id|default": "button.try_menu_exit",
 		"$button_take_half_place_one|default": "button.container_take_half_place_one",
 		"$button_auto_place|default": "button.container_auto_place",
 		"$button_take_all_place_all|default": "button.container_take_all_place_all",
 		"$coalesce_button|default": "button.coalesce_stack",
 		"button_mappings": [
-			{ "from_button_id": "button.menu_cancel", "to_button_id": "button.try_menu_exit", "mapping_type": "pressed" },
+			{ "from_button_id": "button.menu_cancel", "to_button_id": "$slot_cancel_button_id", "mapping_type": "pressed" },
 			{ "from_button_id": "button.menu_select", "to_button_id": "$button_take_all_place_all", "mapping_type": "pressed" },
 			{ "from_button_id": "button.menu_ok", "to_button_id": "$button_take_all_place_all", "mapping_type": "pressed" },
 			{ "from_button_id": "button.menu_secondary_select", "to_button_id": "$button_take_half_place_one", "mapping_type": "pressed" },

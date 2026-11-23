@@ -380,6 +380,103 @@
 		]
 	},
 
+	"sui_selected_item_details_factory": {
+		"type": "panel",
+		"factory": {
+			"name": "selected_item_details_factory",
+			"control_name": "popup_tip_text@sui_common.sui_selected_item_details"
+		}
+	},
+	"sui_selected_item_details": {
+		"type": "panel",
+		"anchor_from": "bottom_middle",
+		"anchor_to": "bottom_middle",
+		"size": [ "100%c", "100%c" ],
+		"$sui_item_details_offset|default": [ 0, "-16px" ],
+		"offset": "$sui_item_details_offset",
+		"layer": 30,
+		"controls": [
+			{ "sui_item_image@sui_common.sui_item_panel_image": {} }
+		],
+		"bindings": [
+			{ "binding_name": "#recipe_details_label", "binding_name_override": "#visible" }
+		]
+	},
+	"sui_item_panel_image": {
+		"type": "image",
+		"texture": "textures/ui/purpleBorder",
+		"size": [ "100%c + 8px", "100%c + 8px" ],
+		"layer": 30,
+		"visible": "#visible",
+		"alpha": "@sui_common.sui_item_details_fade",
+		"controls": [
+			{ "sui_text@sui_common.sui_item_text_label": {} }
+		]
+	},
+	"sui_item_text_label": {
+		"type": "label",
+		"text": "#selected_hover_text",
+		"color": [ 1, 1, 1 ],
+		"localize": false,
+		"enable_profanity_filter": false,
+		"alpha": "@sui_common.sui_item_details_fade",
+		"layer": 1
+	},
+	"sui_item_details_fade": {
+		"anim_type": "alpha",
+		"easing": "in_quint",
+		"duration": 2,
+		"from": 1,
+		"to": 0,
+		"destroy_at_end": "popup_tip_text"
+	},
+
+	"sui_item_lock_notification_factory": {
+		"type": "panel",
+		"factory": {
+			"name": "item_lock_notification_factory",
+			"control_name": "popup_notification_text@sui_common.sui_item_lock_notification"
+		}
+	},
+	"sui_item_lock_notification": {
+		"type": "panel",
+		"anchor_from": "top_middle",
+		"anchor_to": "top_middle",
+		"size": [ "100%c", "100%c" ],
+		"$sui_item_lock_notification_offset|default": [ 0, "6%" ],
+		"offset": "$sui_item_lock_notification_offset",
+		"layer": 30,
+		"controls": [
+			{
+				"sui_notification_background": {
+					"type": "image",
+					"texture": "textures/ui/hud_tip_text_background",
+					"size": [ "100%c + 12px", "100%c + 5px" ],
+					"layer": 30,
+					"alpha": "@sui_common.sui_item_lock_background_fade",
+					"controls": [
+						{
+							"sui_notification_text": {
+								"type": "label",
+								"text": "#notification_text",
+								"color": [ 1, 1, 1 ],
+								"localize": true,
+								"alpha": "@sui_common.sui_item_lock_text_fade",
+								"layer": 1
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"sui_item_lock_text_fade@sui_common.sui_item_details_fade": {
+		"destroy_at_end": "popup_notification_text"
+	},
+	"sui_item_lock_background_fade@sui_common.sui_item_lock_text_fade": {
+		"from": 0.6
+	},
+
 	"sui_bundle_tooltip": {
 		"type": "custom",
 		"renderer": "bundle_tooltip_renderer",
@@ -408,7 +505,7 @@
 					"layer": 1,
 					"controls": [
 						{
-							"sui_selected_item@common.item_panel_image": {
+							"sui_selected_item@sui_common.sui_item_panel_image": {
 								"anchor_from": "top_middle",
 								"anchor_to": "bottom_middle",
 								"alpha": 1,
@@ -417,7 +514,7 @@
 								],
 								"controls": [
 									{
-										"sui_text@common.item_text_label": {
+										"sui_text@sui_common.sui_item_text_label": {
 											"alpha": 1,
 											"text": "#selected_bundle_item_text",
 											"enable_profanity_filter": false,
